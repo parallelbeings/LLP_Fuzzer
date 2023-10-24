@@ -45,214 +45,30 @@ def run_usb_fuzzer():
 
     print("Fuzzing Started")
 
-    print("Fuzzing Get Status with values 0x80 started")
-    for i in range(0, 65536, 1):
-        try:
-            send = dev.ctrl_transfer(0x80, 0, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x80 0 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Status with values 0x80 completed")
+    bmRequestTypes = [0x80, 0x81, 0x82, 0x83]
+    bRequests = [0, 6, 8, 10]
 
-    print("Fuzzing Get Status with values 0x81 started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x81, 0, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x81 0 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Status with values 0x81 completed")
-
-    print("Fuzzing Get Status with values 0x82 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x82, 0, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x82 0 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Status with values 0x82 completed")
-
-    print("Fuzzing Get Status with values 0x83 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x83, 0, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x83 0 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Status with values 0x83 completed")
-
-    print("Fuzzing Get descriptor with values 0x80 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x80, 6, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x80 6 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get descriptor with values 0x80 completed")
-
-    print("Fuzzing Get descriptor with values 0x81 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x81, 6, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x81 6 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get descriptor with values 0x81 completed")
-
-    print("Fuzzing Get descriptor with values 0x82 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x82, 6, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x82 6 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get descriptor with values 0x82 completed")
-
-    print("Fuzzing Get descriptor with values 0x83 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x83, 6, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x83 6 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get descriptor with values 0x83 completed")
-
-    print("Fuzzing Get Configuration with values 0x80 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x80, 8, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x80 8 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Configuration with values 0x80 completed")
-
-    print("Fuzzing Get Configuration with values 0x81 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x81, 8, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x81 8 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Configuration with values 0x81 completed")
-
-    print("Fuzzing Get Configuration with values 0x82 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x82, 8, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x82 8 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Configuration with values 0x82 completed")
-
-    print("Fuzzing Get Configuration with values 0x83 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x83, 8, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x83 8 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Configuration with values 0x83 completed")
-
-    print("Fuzzing Get Interface with values 0x80 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x80, 10, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x80 10 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Interface with values 0x80 completed")
-
-    print("Fuzzing Get Interface with values 0x81 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x81, 10, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x81 10 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Interface with values 0x81 completed")
-
-    print("Fuzzing Get Interface with values 0x82 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x82, 10, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x82 10 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-    print("Fuzzing Get Interface with values 0x82 completed")
-
-    print("Fuzzing Get Interface with values 0x83 Started")
-    for i in range(0, 65535, 1):
-        try:
-            send = dev.ctrl_transfer(0x83, 10, i, lang_id, length)
-            if len(send) >= size:
-                print(
-                    f"Request Sent: 0x83 10 {i} {lang_id} {length}\n"
-                    f"Received: {str(send)} Size: {len(send)}"
-                )
-        except:
-            pass
-
-    print("Fuzzing Get Interface with values 0x83 completed")
+    for bmRequestType in bmRequestTypes:
+        for bRequest in bRequests:
+            print(
+                f"Fuzzing Get Status with values bmRequestType=0x{bmRequestType:02X} and bRequest={bRequest} started"
+            )
+            for i in range(0, 65536, 1):
+                if i > 10 and i % 100 == 0:
+                    print(".", end="")
+                try:
+                    send = dev.ctrl_transfer(bmRequestType, 0, i, lang_id, length)
+                    if len(send) >= size:
+                        print(
+                            f"Request Sent: {bmRequestType:02X} 0 {i} {lang_id} {length}\n"
+                            f"Received: {str(send)} Size: {len(send)}"
+                        )
+                except:
+                    pass
+            print("")
+            print(
+                f"Fuzzing Get Status with values bmRequestType=0x{bmRequestType:02X} and bRequest={bRequest} completed"
+            )
 
 
 if __name__ == "__main__":
