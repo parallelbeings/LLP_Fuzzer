@@ -51,15 +51,8 @@ def run_usb_fuzzer():
             send = dev.ctrl_transfer(0x80, 0, i, lang_id, length)
             if len(send) >= size:
                 print(
-                    "Request Sent:",
-                    0x80,
-                    0,
-                    i,
-                    lang_id,
-                    length,
-                    "Received: " "Size :",
-                    len(send),
-                    str(send),
+                    f"Request Sent: 0x80 0 {i} {lang_id} {length}\n"
+                    f"Received: {str(send)} Size: {len(send)}"
                 )
         except:
             pass
