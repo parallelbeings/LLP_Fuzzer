@@ -57,10 +57,10 @@ def run_usb_fuzzer():
                 if i > 10 and i % 100 == 0:
                     print(".", end="")
                 try:
-                    send = dev.ctrl_transfer(bmRequestType, 0, i, lang_id, length)
+                    send = dev.ctrl_transfer(bmRequestType, bRequest, i, lang_id, length)
                     if len(send) >= size:
                         print(
-                            f"Request Sent: {bmRequestType:02X} 0 {i} {lang_id} {length}\n"
+                            f"Request Sent: {bmRequestType:02X} {bRequest} {i} {lang_id} {length}\n"
                             f"Received: {str(send)} Size: {len(send)}"
                         )
                 except:
