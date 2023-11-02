@@ -12,8 +12,8 @@ To monitor the devices while the fuzzer runs, we plan to use the below instrumen
 
 The instructions for using the fuzzer can be found below, 
 
-- [USB device Fuzzer](https://github.com/Xen1thLabs-AE/LLP_Fuzzer/blob/main/usb.md)
-- [SPI device Fuzzer](https://github.com/Xen1thLabs-AE/LLP_Fuzzer/blob/main/spi.md)
-- [I2C device Fuzzer](https://github.com/Xen1thLabs-AE/LLP_Fuzzer/blob/main/i2c.md)
+- [USB device Fuzzer](usb.md)
+- [SPI device Fuzzer](spi.md)
+- [I2C device Fuzzer](i2c.md)
 
 
